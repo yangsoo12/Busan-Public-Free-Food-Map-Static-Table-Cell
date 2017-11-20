@@ -23,3 +23,4 @@ sPhone.detailTextLabel?.text = sItem["phone"]
 ![Alt text](https://jhkim3217.gitbooks.io/busan-open-data-app-dev/content/assets/statci-cell01.jpg)
 ![Alt text](https://jhkim3217.gitbooks.io/busan-open-data-app-dev/content/assets/statci-cell02.jpg)
 ![Alt text](https://jhkim3217.gitbooks.io/busan-open-data-app-dev/content/assets/statci-cell03.jpg)
+![Alt text](https://jhkim3217.gitbooks.io/busan-open-data-app-dev/content/assets/statci-cell04.jpg
