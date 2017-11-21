@@ -116,17 +116,20 @@ class FreeFoodTableViewController: UITableViewController,XMLParserDelegate {
         //print("items = \(items)")
 		
 		items = []
-		
+        let equeue = DispatchQueue(label:"com.yangsoo.queue", qos:DispatchQoS.userInitiated)
+        equeue.async {
 		for dic in tempItems {
 			// 상세 목록 파싱
-			getDetail(idx: dic["idx"]!)
-		}
-		
+			self.getDetail(idx: dic["idx"]!)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+          }
+        }
 		let temp = items as NSArray  // NSArry는 화일로 저장하기 위함
 		temp.write(to: url, atomically: true)
         
 	}
-
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         //key = elementName.trimmingCharacters(in: .whitespacesAndNewlines)
         
